@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) throws IOException {
         ArrayList<CheckIn> checkIns = getTestData();
-        EBMModel ebmModel = new EBMModel(3, 10, checkIns);
+        EBMModel ebmModel = new EBMModel(3, 10, checkIns, 1.0);
         double[][] socialStrengthVector = ebmModel.compute();
         System.out.println("ok");
     }
