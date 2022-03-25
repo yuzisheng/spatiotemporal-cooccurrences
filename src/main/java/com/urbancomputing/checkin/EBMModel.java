@@ -1,5 +1,7 @@
 package com.urbancomputing.checkin;
 
+import com.urbancomputing.model.CheckIn;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -92,14 +94,14 @@ public class EBMModel {
         locUserVector = new int[locationNum][userNum];
         for (int i = 0; i < checkIns.size(); i++) {
             // count occurrence per user per location
-            locUserVector[checkIns.get(i).lid][checkIns.get(i).uid]++;
+            locUserVector[checkIns.get(i).getLid()][checkIns.get(i).getUid()]++;
             for (int j = i + 1; j < checkIns.size(); j++) {
                 // compute co-occurrence vector
                 CheckIn a = checkIns.get(i);
                 CheckIn b = checkIns.get(j);
-                if (a.uid != b.uid && a.lid == b.lid && a.time == b.time) {
-                    coVector[a.uid][b.uid][a.lid]++;
-                    coVector[b.uid][a.uid][a.lid]++;
+                if (a.getUid() != b.getUid() && a.getLid() == b.getLid() && a.getTime() == b.getTime()) {
+                    coVector[a.getUid()][b.getUid()][a.getLid()]++;
+                    coVector[b.getUid()][a.getUid()][a.getLid()]++;
                 }
             }
         }

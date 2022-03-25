@@ -1,4 +1,4 @@
-package com.urbancomputing.checkin;
+package com.urbancomputing.model;
 
 /**
  * check-in data
@@ -24,5 +24,17 @@ public class CheckIn {
         this.uid = uid;
         this.lid = lid;
         this.time = time;
+    }
+
+    public int getUid() {
+        return uid;
+    }
+
+    public int getLid() {
+        return lid;
+    }
+
+    public long getTime() {
+        return time;
     }
 }

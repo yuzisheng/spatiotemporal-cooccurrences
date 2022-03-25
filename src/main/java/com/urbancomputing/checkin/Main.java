@@ -1,5 +1,7 @@
 package com.urbancomputing.checkin;
 
+import com.urbancomputing.model.CheckIn;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
